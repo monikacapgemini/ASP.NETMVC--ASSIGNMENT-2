@@ -1,0 +1,44 @@
+﻿@model IEnumerable<BootStrapAssignment.Models.BootStrap>
+@{
+    ViewBag.Title = "Home Page";
+
+}
+<br />
+
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
+
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="_19">Bus_ID </th>
+                    <th data-defaultsign="AZ">BoardingPoint</th>
+
+                    <th data-defaultsign="month">TravelDate</th>
+                    <th data-firstsort="_19">Amount</th>
+                    <th data-defaultsign="_19">Rating</th>
+
+                </tr>
+            </thead>
+
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Bus_ID</td>
+                    <td>@item.BoardingPoint</td>
+                    <td>@item.TravelDate</td>
+                    <td>@item.Amount</td>
+                    <td>@item.Rating</td>
+                </tr>
+
+            }
+        }
+    </table>
+</div> 
